@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "zECaoatRduR1pdyZXvWGj0dsIfGSCCUdBjbbkiWCR/M=",
+  "Source": "ServicioTransacciones.API",
+  "BasePath": "_content/ServicioTransacciones.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

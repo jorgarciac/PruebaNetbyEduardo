@@ -1,0 +1,44 @@
+[
+  {
+    "ContainingType": "ServicioTransacciones.API.Controllers.TransaccionesController",
+    "Method": "Listar",
+    "RelativePath": "api/Transacciones",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServicioTransacciones.API.Controllers.TransaccionesController",
+    "Method": "Crear",
+    "RelativePath": "api/Transacciones",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "ServicioTransacciones.API.DTOs.TransaccionCrearDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ServicioTransacciones.API.Controllers.TransaccionesController",
+    "Method": "Obtener",
+    "RelativePath": "api/Transacciones/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

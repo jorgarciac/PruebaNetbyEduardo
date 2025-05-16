@@ -1,0 +1,45 @@
+CREATE DATABASE Netby;
+GO
+
+USE Netby;
+GO
+
+CREATE TABLE Productos (
+    Id UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
+    Nombre NVARCHAR(100) NOT NULL,
+    Descripcion NVARCHAR(250),
+    Categoria NVARCHAR(100),
+    ImagenUrl NVARCHAR(250),
+    Precio DECIMAL(18, 2) NOT NULL,
+    Stock INT NOT NULL
+);
+
+
+CREATE TABLE Transacciones (
+    Id UNIQUEIDENTIFIER PRIMARY KEY,
+    Fecha DATETIME,
+    Tipo NVARCHAR(10),
+    ProductoId UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Productos(Id),
+    Cantidad INT,
+    PrecioUnitario DECIMAL(18,2),
+    PrecioTotal AS (Cantidad * PrecioUnitario) PERSISTED,
+    Detalle NVARCHAR(250)
+);
+
+--TIPO DEFINIDO COMO COMPRA O VENTA
+ALTER TABLE Transacciones
+ADD CONSTRAINT CK_Transacciones_Tipo CHECK (Tipo IN ('Compra', 'Venta'));
+
+--PARA OPTIMIZAR CREA EL INIDICE A PRODUCT ID
+CREATE NONCLUSTERED INDEX IX_Transacciones_ProductoId
+ON Transacciones (ProductoId);
+
+
+--PARA DEFINIR COMPATIBILIDAD A FUTURO CON DATETIME A DATETIME2
+ALTER TABLE Transacciones 
+DROP COLUMN Fecha;
+
+ALTER TABLE Transacciones
+ADD Fecha DATETIME2;
+
+

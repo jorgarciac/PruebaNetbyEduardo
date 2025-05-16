@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "9C0hOfKu5JFt70Wq/ukBLmUXb/3yZICIZDrrqSqtiRQ=",
+  "Source": "ServicioProductos.API",
+  "BasePath": "_content/ServicioProductos.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
