@@ -1,0 +1,36 @@
+<p-toast></p-toast>
+<div class="card w-full md:w-6 mx-auto mt-5">
+  <form [formGroup]="form" (ngSubmit)="guardar()" class="flex flex-column gap-3">
+    <div class="p-float-label">
+      <input id="nombre" pInputText formControlName="nombre" />
+      <label for="nombre">Nombre</label>
+    </div>
+
+    <div class="p-float-label">
+      <input id="descripcion" pInputText formControlName="descripcion" />
+      <label for="descripcion">Descripción</label>
+    </div>
+
+    <div class="p-float-label">
+      <input id="categoria" pInputText formControlName="categoria" />
+      <label for="categoria">Categoría</label>
+    </div>
+
+    <div class="p-float-label">
+      <input id="imagenUrl" pInputText formControlName="imagenUrl" />
+<label for="imagenUrl">URL Imagen</label>
+    </div>
+
+    <div class="p-float-label">
+      <p-inputNumber inputId="precio" formControlName="precio" mode="decimal" />
+      <label for="precio">Precio</label>
+    </div>
+
+    <div class="p-float-label">
+      <p-inputNumber inputId="stock" formControlName="stock" mode="decimal" />
+      <label for="stock">Stock</label>
+    </div>
+
+    <button pButton type="submit" label="Guardar" class="mt-3 w-full"></button>
+  </form>
+</div>

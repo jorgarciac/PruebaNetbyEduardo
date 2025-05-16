@@ -1,0 +1,38 @@
+<div class="card">
+  <h2>Historial de Transacciones</h2>
+<div class="flex justify-content-end mb-3">
+  <button
+    pButton
+    icon="pi pi-plus"
+    label="Nueva Transacción"
+    class="p-button-success"
+    [routerLink]="['/transacciones/crear']"
+  ></button>
+</div>
+  <p-table [value]="transacciones" [paginator]="true" [rows]="10" [loading]="loading">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>ID</th>
+        <th>Fecha</th>
+        <th>Tipo</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio Unitario</th>
+        <th>Precio Total</th>
+        <th>Detalle</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-tx>
+      <tr>
+        <td>{{ tx.id }}</td>
+        <td>{{ tx.fecha | date:'short' }}</td>
+        <td>{{ tx.tipo }}</td>
+        <td>{{ tx.productoId.nombre }}</td>
+        <td>{{ tx.cantidad }}</td>
+        <td>{{ tx.precioUnitario | currency:'USD' }}</td>
+        <td>{{ tx.precioTotal | currency:'USD' }}</td>
+        <td>{{ tx.detalle }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
